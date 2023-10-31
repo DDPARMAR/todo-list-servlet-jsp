@@ -1,10 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>To-Do List</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -15,31 +25,36 @@
             margin: 5px 0;
         }
         button {
-            margin-left: 10px;
             background-color: #f44336;
             color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
+        
+        .add-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            float:left;
+        }
     </style>
 </head>
 <body>
     <h1>To-Do List</h1>
     
-    <form action="AddTodoServlet" method="post">
-        <input type="text" name="newTodo" placeholder="Add a new to-do">
-        <button type="submit">Add</button>
-    </form>
     
-    <ul>
-        <!-- Default to-do items -->
-        <li>Default To-Do 1 <button onclick="deleteTodo(0)">Delete</button></li>
-        <li>Default To-Do 2 <button onclick="deleteTodo(1)">Delete</button></li>
-        <li>Default To-Do 3 <button onclick="deleteTodo(2)">Delete</button></li>
-        
-        <!-- To-do items will be added here dynamically -->
-        <!-- Include your dynamic to-do items here -->
+       <a href="addtodo.jsp"><button class="add-button" type="button">Add Task</button></a> <br>
+    
+    
+    <ul id="todoList">
+        <!-- Demo To-Do items -->
+        <li>Default To-Do 1 <button onclick="deleteTodo(this)">Delete</button></li>
+        <li>Default To-Do 2 <button onclick="deleteTodo(this)">Delete</button></li>
+        <li>Default To-Do 3 <button onclick="deleteTodo(this)">Delete</button></li>
     </ul>
+
 </body>
 </html>
