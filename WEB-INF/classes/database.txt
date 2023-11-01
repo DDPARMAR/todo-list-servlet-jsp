@@ -1,0 +1,6 @@
+CREATE TABLE todo_info (
+    todo_id INT AUTO_INCREMENT PRIMARY KEY,
+    todo_description VARCHAR(255),
+    todo_date DATE,
+    todo_status VARCHAR(20)
+);
