@@ -33,7 +33,7 @@
 <body>
     <div class="container">
         <h2>Add Todo</h2>
-        <form>
+        <form action="addToDo" method="post">
             <label for="todoDescription">Todo Description:</label>
             <input type="text" id="todoDescription" name="todoDescription" required>
             <label for="todoDate">Todo Date:</label>

@@ -33,20 +33,23 @@
 <body>
     <div class="container">
         <h2>Update To-Do Item</h2>
-        <form>
+        <form action="UpdateToDo" method="post">
+            <!-- Hidden input field for the to-do item ID -->
+            <input type="hidden" id="todoId" name="todoId" value="<%= request.getParameter("id") %>">
+            
             <label for="todoDescription">To-Do Description:</label>
-            <input type="text" id="todoDescription" name="todoDescription" required>
+            <input type="text" id="todoDescription" name="todoDescription" value="<%= request.getParameter("description") %>" required>
             
             <label for="todoStatus">Status:</label>
             <select id="todoStatus" name="todoStatus">
-                <option value="open">Open</option>
-                <option value="in-progress">In Progress</option>
-                <option value="completed">Completed</option>
+                <option value="open" <%= "incomplete".equals(request.getParameter("status")) ? "selected" : "" %>>InComplete</option>
+                <option value="in-progress" <%= "in-progress".equals(request.getParameter("status")) ? "selected" : "" %>>In Progress</option>
+                <option value="completed" <%= "completed".equals(request.getParameter("status")) ? "selected" : "" %>>Completed</option>
             </select>
             
             <label for="todoDueDate">Due Date:</label>
-            <input type="date" id="todoDueDate" name="todoDueDate"> <br><br><br>
-            
+            <input type="date" id="todoDueDate" name="todoDueDate" value="<%= request.getParameter("dueDate") %>"> <br><br><br>
+
             <button type="submit">Update To-Do</button>
         </form>
     </div>

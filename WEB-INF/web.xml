@@ -25,4 +25,22 @@
         <servlet-name>logout</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addToDo</servlet-name>
+        <servlet-class>addToDo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addToDo</servlet-name>
+        <url-pattern>/addToDo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateToDo</servlet-name>
+        <servlet-class>UpdateToDo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateToDo</servlet-name>
+        <url-pattern>/UpdateToDo</url-pattern>
+    </servlet-mapping>
 </web-app>
